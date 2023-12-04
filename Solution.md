@@ -1,7 +1,6 @@
-## How Does a Bike-Share Navigate Speedy Success?
+# How Does a Bike-Share Navigate Speedy Success?
 
-
-## A great case study will include the following:
+# A great case study will include the following:
 
 
 * Introduction: Make sure to state the purpose of the case study. This includes what the scenario is and an explanation on how it relates to a real-world obstacle. Feel free to note any assumptions or theories you might have, depending on the information provided. 
