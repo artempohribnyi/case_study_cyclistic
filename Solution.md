@@ -54,8 +54,46 @@ So, **the business task** is to understand how annual members and casual riders 
 
 
 ## Prepare
+ ● Where is your data located? 
+ ● How is the data organized? 
+ ● Are there issues with bias or credibility in this data? Does your data ROCCC? 
+ ● How are you addressing licensing, privacy, security, and accessibility? 
+ ● How did you verify the data’s integrity? 
+ ● How does it help you answer your question? 
+ ● Are there any problems with the data?
 
-You will use Cyclistic’s historical trip data to analyze and identify trends. Download the Cyclistic trip data here. (Note: The datasets have a different name because Cyclistic is a fictional company. For the purposes of this case study, the datasets are appropriate and will enable you to answer the business questions. The data has been made available by Motivate International Inc. under this license.) You can choose to work with an entire year of data, or just one quarter of a year. If you are working in Google Sheets, there are some files that might be too large to view. This is public data that you can use to explore how different customer types are using Cyclistic bikes. But note that data-privacy issues prohibit you from using riders’ personally identifiable information. This means that you won’t be able to connect pass purchases to credit card numbers to determine if casual riders live in the Cyclistic service area or if they have purchased multiple single passes.
+**Data Collection:**
+Identify relevant data sources.
+Gather raw data from diverse sources.
+**Data Understanding:**
+Familiarize yourself with the data structure.
+Document data sources, formats, and any preliminary observations.
+**Data Cleaning:**
+Identify and handle missing or incomplete data.
+Remove duplicates and outliers.
+Standardize formats and units.
+
+
+Following the task, I downloaded trip historical data from the [public repository](https://divvy-tripdata.s3.amazonaws.com/index.html) where it is located.
+
+## Oficcial documentation:
+
+Here you'll find Cyclistic's trip data for public use. So whether you're a policymaker, transportation professional, web developer, designer, or just plain curious, feel free to download it, map it, animate it, or bring it to life!
+
+Note: This data is provided according to the [Divvy Data License Agreement](https://www.divvybikes.com/data-license-agreement) and released on a monthly schedule.
+
+## The Data
+
+Each trip is anonymized and includes:
+
+* Trip start day and time
+* Trip end day and time
+* Trip start station
+* Trip end station
+* Rider type (Member, Single Ride, and Day Pass)
+  
+The data has been processed to remove trips that are taken by staff as they service and inspect the system and any trips that were below 60 seconds in length (potentially false starts or users trying to re-dock a bike to ensure it was secure).
+
 
 
 Steps:
