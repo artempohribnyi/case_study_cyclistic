@@ -54,25 +54,6 @@ So, **the business task** is to understand how annual members and casual riders 
 
 
 ## Prepare
- ● Where is your data located? 
- ● How is the data organized? 
- ● Are there issues with bias or credibility in this data? Does your data ROCCC? 
- ● How are you addressing licensing, privacy, security, and accessibility? 
- ● How did you verify the data’s integrity? 
- ● How does it help you answer your question? 
- ● Are there any problems with the data?
-
-**Data Collection:**
-Identify relevant data sources.
-Gather raw data from diverse sources.
-**Data Understanding:**
-Familiarize yourself with the data structure.
-Document data sources, formats, and any preliminary observations.
-**Data Cleaning:**
-Identify and handle missing or incomplete data.
-Remove duplicates and outliers.
-Standardize formats and units.
-
 
 Following the task, I downloaded trip historical data from the [public repository](https://divvy-tripdata.s3.amazonaws.com/index.html) where it is located.
 
@@ -105,6 +86,6 @@ I mentioned that there are some blanks in a data set, and they'll need some clea
 
 The conclusion from this step is that the data from reliable data sources, originally collected by a first-party organisation, is comprehensive, current, and cited. **So it ROCCCs!** Let's move forward to the next step.
 
-
+## Process
 
 I created a new project in Big Quarry. I created a new data set, cyclistic_tripdata. I unpacked and loaded each data set into Big Quarry.
