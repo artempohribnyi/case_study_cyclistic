@@ -38,7 +38,7 @@ Moreno has assigned me the first question to answer: How do annual members and c
 
 So, **the business task** is to understand how annual members and casual riders use Cyclistic bikes differently. And if we can use those insights in designing marketing strategies aimed at converting casual riders into annual members, this involves analyzing the historical bike trip data to uncover patterns and differences in usage between these two user groups.
 
-## Consider Key Stakeholders:
+### Consider Key Stakeholders:
 
 **Lily Moreno (Director of Marketing and Manager):** She is interested in this data to design effective marketing strategies. Her goal is to maximize the number of annual memberships for the company's future success.
 
@@ -57,13 +57,13 @@ So, **the business task** is to understand how annual members and casual riders 
 
 Following the task, I downloaded trip historical data from the [public repository](https://divvy-tripdata.s3.amazonaws.com/index.html) where it is located.
 
-## Official documentation:
+### Official documentation:
 
 Here you'll find Cyclistic's trip data for public use. So whether you're a policymaker, transportation professional, web developer, designer, or just plain curious, feel free to download it, map it, animate it, or bring it to life!
 
 Note: This data is provided according to the [Divvy Data License Agreement](https://www.divvybikes.com/data-license-agreement) and released on a monthly schedule.
 
-## The Data
+### The Data
 
 Each trip is anonymized and includes:
 
@@ -88,4 +88,37 @@ The conclusion from this step is that the data from reliable data sources, origi
 
 ## Process
 
-I created a new project in Big Quarry. I created a new data set, cyclistic_tripdata. I unpacked and loaded each data set into Big Quarry.
+● What tools are you choosing and why? 
+● Have you ensured your data’s integrity? 
+● What steps have you taken to ensure that your data is clean? 
+● How can you verify that your data is clean and ready to analyze? 
+● Have you documented your cleaning processes so you can review and share those results?
+
+**Data Transformation:**
+Normalize or standardize variables if necessary.
+Create derived variables if they provide meaningful insights.
+**Data Integration:**
+Merge different datasets, if applicable.
+Ensure consistency in variables across datasets.
+
+
+To upload data to BigQuarry, I created a new project and a new data set, *cyclistic_tripdata*. Then I loaded each data set into BigQuarry, but because of the size of some data sets, it was needed to use Google Cloud Storage.
+
+The next step using the menu is to check the schema of each table, field names, and data type.
+
+*CREATE TABLE* and *UNION ALL* merged tables to one single table, *tripdata_all*, for esy processing.
+```
+CREATE TABLE cyclistic_tripdata.tripdata_all AS 
+SELECT * FROM cyclistic_tripdata.202301_tripdata UNION ALL
+    SELECT * FROM cyclistic_tripdata.202302_tripdata UNION ALL
+      SELECT * FROM cyclistic_tripdata.202303_tripdata UNION ALL
+        SELECT * FROM cyclistic_tripdata.202304_tripdata UNION ALL
+          SELECT * FROM cyclistic_tripdata.202305_tripdata UNION ALL
+            SELECT * FROM cyclistic_tripdata.202306_tripdata UNION ALL
+              SELECT * FROM cyclistic_tripdata.202307_tripdata UNION ALL
+                SELECT * FROM cyclistic_tripdata.202308_tripdata UNION ALL
+                  SELECT * FROM cyclistic_tripdata.202309_tripdata UNION ALL
+                    SELECT * FROM cyclistic_tripdata.202310_tripdata
+```
+
+
