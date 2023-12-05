@@ -1,4 +1,6 @@
 # How Does a Bike-Share Navigate Speedy Success?
+![image](https://github.com/artempohribnyi/case_study_cyclistic/assets/113499718/4feddaf4-d93c-4c0f-8d9a-be4b94093129)
+
 
 ## Scenario
 
@@ -36,7 +38,7 @@ Three questions will guide the future marketing program:
 
 Moreno has assigned me the first question to answer: How do annual members and casual riders use Cyclistic bikes differently?
 
-So, **the business task** is to understand how annual members and casual riders use Cyclistic bikes differently. And if we can use those insights in designing marketing strategies aimed at converting casual riders into annual members, this involves analyzing the historical bike trip data to uncover patterns and differences in usage between these two user groups.
+So, **the business task is to understand how annual members and casual riders use Cyclistic bikes differently** . And if we can use those insights in designing marketing strategies aimed at converting casual riders into annual members, this involves analyzing the historical bike trip data to uncover patterns and differences in usage between these two user groups.
 
 ### Consider Key Stakeholders:
 
@@ -140,7 +142,7 @@ start_station_id
 end_station_name
 end_station_id**
 
-Let's count how many observations have *null* values.
+Let's count how many observations have *null* values at all.
 
 ```
 SELECT
@@ -164,3 +166,34 @@ WHERE
 ```
 ![image](https://github.com/artempohribnyi/case_study_cyclistic/assets/113499718/636baf13-cdd8-4b20-9bb0-37cab0e89e9f)
 
+The total number of observations is 5133286. It's 24,22%. Have to investigate if there are any patterns.
+
+Questions are:
+* Which columns have *nuul* values?
+* Do we need all that data for the current business task, or can we drop it?
+* What causes *null* in the data set?
+
+```
+/* 
+I want to investigate which columns have NULLs. 
+I'm going to compare the number of NULLs in each column to the number of rows in the whole data set (5133286).
+*/
+SELECT
+  COUNT(*) - COUNT(ride_id) AS ride_id,
+  COUNT(*) - COUNT(rideable_type) AS rideable_type,
+  COUNT(*) - COUNT(started_at) AS started_at,
+  COUNT(*) - COUNT(ended_at) AS ended_at,
+  COUNT(*) - COUNT(start_station_name) AS start_station_name,
+  COUNT(*) - COUNT(start_station_id) AS start_station_id,
+  COUNT(*) - COUNT(end_station_name) AS end_station_name,
+  COUNT(*) - COUNT(end_station_id) AS end_station_id,
+  COUNT(*) - COUNT(start_lng) AS start_lng,
+  COUNT(*) - COUNT(end_lat) AS end_lat,
+  COUNT(*) - COUNT(end_lng) AS end_lng,
+  COUNT(*) - COUNT(member_casual) AS member_casual
+FROM
+  `cyclistic_tripdata.tripdata_all`
+```
+![image](https://github.com/artempohribnyi/case_study_cyclistic/assets/113499718/04621631-7344-45da-8355-e59dc5cb1a8a)
+
+After discussions with the team and Lily, we decided that for the purpose of the current business task.
