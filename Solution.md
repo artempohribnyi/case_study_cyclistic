@@ -120,5 +120,47 @@ SELECT * FROM cyclistic_tripdata.202301_tripdata UNION ALL
                   SELECT * FROM cyclistic_tripdata.202309_tripdata UNION ALL
                     SELECT * FROM cyclistic_tripdata.202310_tripdata
 ```
+![image](https://github.com/artempohribnyi/case_study_cyclistic/assets/113499718/48a20296-fe22-4617-bf59-1d98ee7bb192)
 
+Checking for duplicates.
+```
+SELECT
+  COUNT(ride_id) AS num_of_observ,
+  COUNT(DISTINCT ride_id) AS dist_num_of_observ
+FROM
+  `cyclistic_tripdata.tripdata_all`
+```
+![image](https://github.com/artempohribnyi/case_study_cyclistic/assets/113499718/43438405-c292-4105-a681-b91a9df1c41c)
+
+
+I see that we have some rows with *null* values in such columns:
+
+**start_station_name
+start_station_id
+end_station_name
+end_station_id**
+
+Let's count how many observations have *null* values.
+
+```
+SELECT
+  COUNT(*) AS num_of_rows_with_null
+FROM
+  `cyclistic_tripdata.tripdata_all`
+WHERE
+  ride_id IS NULL
+  OR rideable_type IS NULL
+  OR started_at IS NULL
+  OR ended_at IS NULL
+  OR start_station_name IS NULL
+  OR start_station_id IS NULL
+  OR end_station_name IS NULL
+  OR end_station_id IS NULL
+  OR start_lat IS NULL
+  OR start_lng IS NULL
+  OR end_lat IS NULL
+  OR end_lng IS NULL
+  OR member_casual IS NULL
+```
+![image](https://github.com/artempohribnyi/case_study_cyclistic/assets/113499718/636baf13-cdd8-4b20-9bb0-37cab0e89e9f)
 
