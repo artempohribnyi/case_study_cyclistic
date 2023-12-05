@@ -99,9 +99,11 @@ I think the last 10 months, from January to October 2023, will be enough to comp
 
 To ensure data integrity, I downloaded all files to a separate folder, *cyclistic_tripdata*, and, keeping the original files and using appropriate file-naming conventions, unziped them to a subfolder, *2023_tripdata*.
 
-Datasets can show a lot of interesting information. But to be sure, I chose the right data that can actually help me solve a problem I decided to take a glance, using Excel to open the smallest-sized file. The text-to-column option helped to create a table since it's in CSV format. Sorted by start_at. So, there is time series data to analyze trends over time or to analyze different patterns of use between casuals and members, like average ride time. Count the number of rides and try to understand the preferred bike type, weekdays, and start stations.
+Datasets can show a lot of interesting information. But to be sure, I chose the right data that can actually help me solve a problem I decided to take a glance, using Excel to open the smallest-sized file, *202301_tripdata*. The text-to-column option helped to create a table since it's in CSV format. Sorted by *start_at*. So, there is time series data to analyze trends over time or to analyze different patterns of use between casuals and members, like average ride time. Count the number of rides and try to understand the preferred bike type, weekdays, and start stations.
 
 I mentioned that there are some blanks in a data set, and they'll need some cleaning for further analysis. And since just this data set, the smallest one, contains 190302 rows, it would be great to manipulate all data sets in one place, so I decided that BigQuery is better for this purpose.
+
+The conclusion from this step is that the data from reliable data sources, originally collected by a first-party organisation, is comprehensive, current, and cited. **So it ROCCCs!** Let's move forward to the next step.
 
 
 
