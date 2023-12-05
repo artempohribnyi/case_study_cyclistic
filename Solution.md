@@ -95,8 +95,10 @@ Each trip is anonymized and includes:
 The data has been processed to remove trips that are taken by staff as they service and inspect the system and any trips that were below 60 seconds in length (potentially false starts or users trying to re-dock a bike to ensure it was secure).
 
 
+I think the last 10 months, from January to October 2023, will be enough to complete the business task. Since the data is released on a monthly schedule, each month is in a separate zip file. 
 
-Steps:
+To ensure data integrity I downloaded all files to a separate folder <cyclistic_tripdata_2023>
 
-I downloaded data of the last 10 months from January to October 2023 to my PC. Each month in the separate Zip file.
+
+
 Created a new project in Big Quarry. Created a new data set, cyclistic_tripdata. Unpacked and loaded each data set to Big Quarry.
