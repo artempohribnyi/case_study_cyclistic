@@ -187,6 +187,7 @@ SELECT
   COUNT(*) - COUNT(start_station_id) AS start_station_id,
   COUNT(*) - COUNT(end_station_name) AS end_station_name,
   COUNT(*) - COUNT(end_station_id) AS end_station_id,
+  COUNT(*) - COUNT(start_lat) AS start_lat,
   COUNT(*) - COUNT(start_lng) AS start_lng,
   COUNT(*) - COUNT(end_lat) AS end_lat,
   COUNT(*) - COUNT(end_lng) AS end_lng,
@@ -194,6 +195,6 @@ SELECT
 FROM
   `cyclistic_tripdata.tripdata_all`
 ```
-![image](https://github.com/artempohribnyi/case_study_cyclistic/assets/113499718/04621631-7344-45da-8355-e59dc5cb1a8a)
+![image](https://github.com/artempohribnyi/case_study_cyclistic/assets/113499718/60372359-f3ea-406c-a0d1-b307ab258cc9)
 
 After discussions with the team and Lily, we decided that for the purpose of the current business task.
