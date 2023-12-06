@@ -90,26 +90,6 @@ The conclusion from this step is that the data from reliable data sources, origi
 
 ## Process
 
-● What tools are you choosing and why? 
-● Have you ensured your data’s integrity? 
-● What steps have you taken to ensure that your data is clean? 
-● How can you verify that your data is clean and ready to analyze? 
-● Have you documented your cleaning processes so you can review and share those results?
-
-**Key tasks** 
-1. Check the data for errors.
-2. Choose your tools.
-3. Transform the data so you can work with it effectively.
-4. Document the cleaning process.
-
-**Data Transformation:**
-Normalize or standardize variables if necessary.
-Create derived variables if they provide meaningful insights.
-**Data Integration:**
-Merge different datasets, if applicable.
-Ensure consistency in variables across datasets.
-
-
 To upload data to BigQuarry, I created a new project and a new data set, *cyclistic_tripdata*. Then I loaded each data set into BigQuarry, but because of the size of some data sets, it was needed to use Google Cloud Storage.
 
 The next step using the menu is to check the schema of each table, field names, and data type.
@@ -333,3 +313,18 @@ So, now that my data is stored appropriately and has been prepared for analysis,
 
 
 ## Analyze
+
+**Guidingquestions**
+
+● How should you organize your data to perform analysis on it? 
+● Has your data been properly formatted? 
+● What surprises did you discover in the data? 
+● What trends or relationships did you find in the data? 
+● How will the insights help answer your business questions? 
+
+**Keytasks**
+
+1. Aggregate your data so it’s useful and accessible.
+2. Organize and format your data.
+3. Perform calculations.
+4. Identify trends and relationships.
