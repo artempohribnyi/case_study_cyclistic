@@ -328,3 +328,21 @@ So, now that my data is stored appropriately and has been prepared for analysis,
 2. Organize and format your data.
 3. Perform calculations.
 4. Identify trends and relationships.
+
+**Exploratory Data Analysis (EDA):**
+Visualize data using charts, graphs, and histograms.
+Calculate summary statistics (mean, median, etc.).
+Identify patterns, trends, and correlations in the data.
+
+**Hypothesis Testing (if applicable):**
+Formulate hypotheses related to the problem.
+Choose appropriate statistical tests.
+Analyze results and draw conclusions.
+
+Let's calculate some summary statistics, investigate interesting trends, and do aggregations.
+
+**Q: What is the mean, max, and min of ride_length?**
+
+```
+
+```
