@@ -96,6 +96,12 @@ The conclusion from this step is that the data from reliable data sources, origi
 ● How can you verify that your data is clean and ready to analyze? 
 ● Have you documented your cleaning processes so you can review and share those results?
 
+**Key tasks** 
+1. Check the data for errors.
+2. Choose your tools.
+3. Transform the data so you can work with it effectively.
+4. Document the cleaning process.
+
 **Data Transformation:**
 Normalize or standardize variables if necessary.
 Create derived variables if they provide meaningful insights.
@@ -166,11 +172,11 @@ WHERE
 ```
 ![image](https://github.com/artempohribnyi/case_study_cyclistic/assets/113499718/636baf13-cdd8-4b20-9bb0-37cab0e89e9f)
 
-The total number of observations is 5133286. It's 24,22%. Have to investigate if there are any patterns.
+The total number of observations is 5133286. It's 24,22%. Have to investigate if there are any patterns there.
 
 Questions are:
 * Which columns have *nuul* values?
-* Do we need all that data for the current business task, or can we drop it?
+* Do we need all that data to answer business question, or can we drop it?
 * What causes *null* in the data set?
 
 ```
@@ -197,4 +203,103 @@ FROM
 ```
 ![image](https://github.com/artempohribnyi/case_study_cyclistic/assets/113499718/60372359-f3ea-406c-a0d1-b307ab258cc9)
 
-After discussions with the team and Lily, we decided that for the purpose of the current business task.
+Ok. I see now that there are nulls in this columns:
+
+**start_station_name
+start_station_id
+end_station_name
+end_station_id
+end_lat
+end_lng**
+
+I decided to create two tables for further analysis. The first, with the dropped variables (columns), and the second, with the dropped observations (rows), contain nulls.
+
+```
+/* 
+The table without dropped variables (columns) with null values.
+*/
+
+WITH
+  dropped_var AS (
+  SELECT
+    ride_id,
+    rideable_type,
+    started_at,
+    ended_at,
+    member_casual
+  FROM
+    cyclistic_tripdata.tripdata_all
+  ORDER BY
+    started_at )
+
+SELECT
+  *
+FROM
+  dropped_var
+```
+![image](https://github.com/artempohribnyi/case_study_cyclistic/assets/113499718/10b9ffc4-1e83-422e-b7f6-da2253bfb252)
+
+```
+/* 
+Dropped any observations with a null. 
+*/
+
+WITH
+  dropped_observ AS (
+  SELECT
+    *
+  FROM
+    cyclistic_tripdata.tripdata_all
+  WHERE
+    start_station_name IS NOT NULL
+    AND start_station_id IS NOT NULL
+    AND end_station_name IS NOT NULL
+    AND end_station_id IS NOT NULL
+    AND end_lat IS NOT NULL
+    AND end_lng IS NOT NULL
+  ORDER BY
+    started_at )
+
+SELECT
+  *
+FROM
+  dropped_observ
+```
+![image](https://github.com/artempohribnyi/case_study_cyclistic/assets/113499718/b1ebd096-07fa-4881-bd74-5ae32139036a)
+
+Let's do some calculations next. I'm going to add two new variables: *ride_length* and *day_of_week*.
+
+```
+/*
+Added two variables 'ride_length' and 'day_of_week'.
+*/
+
+SELECT
+  *,
+  DATE_DIFF(ended_at, started_at, minute) AS ride_length,
+  FORMAT_DATE('%A', started_at) AS day_of_week
+FROM
+  dropped_var
+ORDER BY 
+  ride_length
+```
+![image](https://github.com/artempohribnyi/case_study_cyclistic/assets/113499718/b2055126-6dea-4d08-886f-69ba3ebc2404)
+
+But what do we see here? There are some observations with a minus sign, which means that there are missing records in timestamps. Let's fix this.
+
+```
+WITH
+  dropped_var AS (
+  SELECT
+    ride_id,
+    rideable_type,
+    started_at,
+    ended_at,
+    member_casual,
+    -- Changed missing values places
+    IF(DATE_DIFF(ended_at, started_at, minute) >= 0, started_at, ended_at) AS started_at_fixed,
+    IF(DATE_DIFF(ended_at, started_at, minute) >= 0, ended_at, started_at) AS ended_at_fixed
+  FROM
+    cyclistic_tripdata.tripdata_all )
+```
+![image](https://github.com/artempohribnyi/case_study_cyclistic/assets/113499718/9f0ec351-e6e8-4386-9ccc-e1c4ff518553)
