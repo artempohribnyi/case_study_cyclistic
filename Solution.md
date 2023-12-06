@@ -296,10 +296,40 @@ WITH
     started_at,
     ended_at,
     member_casual,
-    -- Changed missing values places
+    -- Fixed missing values with changing their places
     IF(DATE_DIFF(ended_at, started_at, minute) >= 0, started_at, ended_at) AS started_at_fixed,
     IF(DATE_DIFF(ended_at, started_at, minute) >= 0, ended_at, started_at) AS ended_at_fixed
   FROM
     cyclistic_tripdata.tripdata_all )
 ```
 ![image](https://github.com/artempohribnyi/case_study_cyclistic/assets/113499718/9f0ec351-e6e8-4386-9ccc-e1c4ff518553)
+
+Another issue that we know from a data document< that the data has been processed to remove trips that are taken by staff as they service and inspect the system and any trips that were below 60 seconds in length (potentially false starts or users trying to re-dock a bike to ensure it was secure). So let's filter zeros in the *ride_length*.
+
+```
+SELECT
+  ride_id,
+  rideable_type,
+  started_at_fixed,
+  ended_at_fixed,
+  member_casual,
+  DATE_DIFF(ended_at_fixed, started_at_fixed, MINUTE) AS ride_length,
+  FORMAT_DATE('%A', started_at_fixed) AS day_of_week
+FROM
+  dropped_var
+-- Filtered values are less than 60 seconds.
+WHERE
+  DATE_DIFF(ended_at_fixed, started_at_fixed, MINUTE) > 0
+ORDER BY 
+  ride_length
+```
+![image](https://github.com/artempohribnyi/case_study_cyclistic/assets/113499718/38d26679-f3ca-49c1-b677-3e350ad91f50)
+
+Using a quarry setting, I saved the result in a new table, *tripdata_clean_var*. The same I did with the second table, *tripdata_clean_observ*.
+![image](https://github.com/artempohribnyi/case_study_cyclistic/assets/113499718/43783d05-a15f-4463-a032-8f076b436791)
+
+
+So, now that my data is stored appropriately and has been prepared for analysis, let's start putting it to work.
+
+
+## Analyze
