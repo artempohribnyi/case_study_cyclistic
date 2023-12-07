@@ -401,3 +401,16 @@ GROUP BY
   member_casual
 ```
 ![image](https://github.com/artempohribnyi/case_study_cyclistic/assets/113499718/abc7edeb-5290-4890-90b6-896ef523bfbf)
+
+**Q: What is the average *ride_length* by *member_casual*?**
+
+```
+SELECT
+  member_casual,
+  ROUND(AVG(ride_length), 2) AS total_avg_ride_length
+FROM
+  `cyclistic_tripdata.tripdata_clean_observ`
+GROUP BY
+  member_casual
+```
+![image](https://github.com/artempohribnyi/case_study_cyclistic/assets/113499718/d47d1ccc-b9d3-4b7a-a6bb-fbb06d761e15)
