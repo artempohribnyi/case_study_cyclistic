@@ -344,5 +344,60 @@ Let's calculate some summary statistics, investigate interesting trends, and do 
 **Q: What is the mean, max, and min of ride_length?**
 
 ```
+SELECT
+  *
+FROM (
+  SELECT
+    *
+  FROM (
+    SELECT
+      DISTINCT col,
+      PERCENTILE_CONT(value, 0.25) OVER win AS q1,
+      PERCENTILE_CONT(value, 0.50) OVER win AS q2,
+      PERCENTILE_CONT(value, 0.75) OVER win AS q3,
+      ROUND(AVG(value) OVER win, 1) AS avg,
+      ROUND(STDDEV(value) OVER win, 1) AS std,
+      MAX(CAST(value AS FLOAT64)) OVER win AS max,
+      MIN(CAST(value AS FLOAT64)) OVER win AS min
+    FROM
+      `cyclistic_tripdata.tripdata_clean_observ` 
+    UNPIVOT (value FOR col IN (ride_length))
+    WINDOW
+      win AS (PARTITION BY col)) UNPIVOT (value FOR stats IN (q1, q2, q3, avg, std, max, min)) ) PIVOT (ANY_VALUE(value) FOR col IN ('ride_length'))
 
 ```
+![image](https://github.com/artempohribnyi/case_study_cyclistic/assets/113499718/6c520498-2980-43eb-a14d-1600d903d37f)
+
+**Q: What is the mode of the *da_of_week*?**
+
+```
+SELECT
+  day_of_week,
+  COUNT(day_of_week) AS mode
+FROM
+  `cyclistic_tripdata.tripdata_clean_observ`
+GROUP BY
+  day_of_week
+ORDER BY
+  mode DESC
+```
+![image](https://github.com/artempohribnyi/case_study_cyclistic/assets/113499718/b2152345-76c3-4a8e-8685-3b3d3a860ba7)
+
+**Q: What is the most popular day of the week by *member_casual*?**
+
+```
+SELECT
+  member_casual,
+  COUNTIF(day_of_week = 'Monday') AS Monday,
+  COUNTIF(day_of_week = 'Tuesday') AS Tuesday,
+  COUNTIF(day_of_week = 'Wednesday') AS Wednesday,
+  COUNTIF(day_of_week = 'Thursday') AS Thursday,
+  COUNTIF(day_of_week = 'Friday') AS Friday,
+  COUNTIF(day_of_week = 'Saturday') AS Saturday,
+  COUNTIF(day_of_week = 'Sunday') AS Sunday
+FROM
+  `cyclistic_tripdata.tripdata_clean_observ`
+GROUP BY
+  member_casual
+```
+![image](https://github.com/artempohribnyi/case_study_cyclistic/assets/113499718/abc7edeb-5290-4890-90b6-896ef523bfbf)
