@@ -314,31 +314,6 @@ So, now that my data is stored appropriately and has been prepared for analysis,
 
 ## Analyze
 
-**Guidingquestions**
-
-● How should you organize your data to perform analysis on it? 
-● Has your data been properly formatted? 
-● What surprises did you discover in the data? 
-● What trends or relationships did you find in the data? 
-● How will the insights help answer your business questions? 
-
-**Keytasks**
-
-1. Aggregate your data so it’s useful and accessible.
-2. Organize and format your data.
-3. Perform calculations.
-4. Identify trends and relationships.
-
-**Exploratory Data Analysis (EDA):**
-Visualize data using charts, graphs, and histograms.
-Calculate summary statistics (mean, median, etc.).
-Identify patterns, trends, and correlations in the data.
-
-**Hypothesis Testing (if applicable):**
-Formulate hypotheses related to the problem.
-Choose appropriate statistical tests.
-Analyze results and draw conclusions.
-
 Let's calculate some summary statistics, investigate interesting trends, and do aggregations.
 
 **Q: What is the mean, max, and min of ride_length?**
@@ -414,3 +389,46 @@ GROUP BY
   member_casual
 ```
 ![image](https://github.com/artempohribnyi/case_study_cyclistic/assets/113499718/d47d1ccc-b9d3-4b7a-a6bb-fbb06d761e15)
+
+**Q: What is the average *ride_length* by *member_casual* by day_of_week?**
+
+```
+SELECT
+  member_casual,
+  ROUND(AVG(CASE WHEN day_of_week = 'Monday' THEN ride_length END), 2) AS Monday,
+  ROUND(AVG(CASE WHEN day_of_week = 'Tuesday' THEN ride_length END), 2) AS Tuesday,
+  ROUND(AVG(CASE WHEN day_of_week = 'Wednesday' THEN ride_length END), 2) AS Wednesday,
+  ROUND(AVG(CASE WHEN day_of_week = 'Thursday' THEN ride_length END), 2) AS Thursday,
+  ROUND(AVG(CASE WHEN day_of_week = 'Friday' THEN ride_length END), 2) AS Friday,
+  ROUND(AVG(CASE WHEN day_of_week = 'Saturday' THEN ride_length END), 2) AS Saturday,
+  ROUND(AVG(CASE WHEN day_of_week = 'Sunday' THEN ride_length END), 2) AS Sunday
+FROM
+  `cyclistic_tripdata.tripdata_clean_observ`
+GROUP BY
+  member_casual;
+```
+![image](https://github.com/artempohribnyi/case_study_cyclistic/assets/113499718/ea33eee6-e0dd-4cb4-ab24-0556ac442b66)
+
+
+## Share
+
+**Guiding questions** 
+● Were you able to answer the question of how annual members and casual riders use Cyclistic bikes differently? 
+● What story does your data tell? 
+● How do your findings relate to your original question? 
+● Who is your audience? What is the best way to communicate with them? 
+● Can data visualization help you share your findings? 
+● Is your presentation accessible to your audience? 
+
+**Key tasks** 
+1. Determine the best way to share your findings.
+2. Create effective data visualizations.
+3. Present your findings.
+4. Ensure your work is accessible.
+
+**Visualization and Reporting:**
+Create clear and insightful data visualizations.
+Prepare a comprehensive report outlining the findings and methodologies.
+**Communication:**
+Clearly explain insights to both technical and non-technical stakeholders.
+Prepare presentations for different audience levels.
