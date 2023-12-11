@@ -412,27 +412,6 @@ GROUP BY
 
 ## Share
 
-**Guiding questions** 
-● Were you able to answer the question of how annual members and casual riders use Cyclistic bikes differently? 
-● What story does your data tell? 
-● How do your findings relate to your original question? 
-● Who is your audience? What is the best way to communicate with them? 
-● Can data visualization help you share your findings? 
-● Is your presentation accessible to your audience? 
-
-**Key tasks** 
-1. Determine the best way to share your findings.
-2. Create effective data visualizations.
-3. Present your findings.
-4. Ensure your work is accessible.
-
-**Visualization and Reporting:**
-Create clear and insightful data visualizations.
-Prepare a comprehensive report outlining the findings and methodologies.
-**Communication:**
-Clearly explain insights to both technical and non-technical stakeholders.
-Prepare presentations for different audience levels.
-
 During ten months from January 2023 to October 2023 annual members were using Cyclistic's bikes more frequently.  
 
 ![image](https://github.com/artempohribnyi/case_study_cyclistic/assets/113499718/75b5c31b-a110-440a-9d78-6b97b8a95cf1)
@@ -454,5 +433,24 @@ Casual riders prefer electric bikes to classic and some like docked bikes. Annua
 ![image](https://github.com/artempohribnyi/case_study_cyclistic/assets/113499718/2e0dd15f-e2d8-4b43-a838-44acaacfd00b)
 
 
+## Act
 
+**Guidingquestions**
+● What is your final conclusion based on your analysis? 
+● How could your team and business apply your insights? 
+● What next steps would you or your stakeholder stake based on your findings? 
+● Is there additional data you could use to expand on your findings? 
+**Keytasks**
+1. Create your portfolio.
+2. Add your case study.
+3. Practice presenting your case study to afriend or family member.
+**Deliverable**
+Your top three recommendations based on your analysis
+
+**Decision Making:**
+Assist stakeholders in making informed decisions based on analysis.
+Provide recommendations and potential courses of action.
+**Feedback Loop:**
+Gather feedback from stakeholders about the analysis.
+Iterate on the analysis based on feedback if necessary.
 
