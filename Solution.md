@@ -416,6 +416,10 @@ During ten months from January 2023 to October 2023 annual members were using Cy
 
 ![image](https://github.com/artempohribnyi/case_study_cyclistic/assets/113499718/75b5c31b-a110-440a-9d78-6b97b8a95cf1)
 
+Casual members override more time more time in total than annual members.
+![image](https://github.com/artempohribnyi/case_study_cyclistic/assets/113499718/2ccaf094-2852-4010-beb6-caacce708369)
+
+
 The average length of a ride by the period of a casual member is 2.33 times longer than annual. 
 
 ![image](https://github.com/artempohribnyi/case_study_cyclistic/assets/113499718/634a9bd3-c0ed-4556-87c2-6a9e531cb0d4)
