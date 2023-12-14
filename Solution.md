@@ -416,13 +416,14 @@ During ten months from January 2023 to October 2023 annual members were using Cy
 
 ![image](https://github.com/artempohribnyi/case_study_cyclistic/assets/113499718/75b5c31b-a110-440a-9d78-6b97b8a95cf1)
 
+The average length of a ride by the period of a casual member is 2.33 times longer than annual. 
+
+![image](https://github.com/artempohribnyi/case_study_cyclistic/assets/113499718/634a9bd3-c0ed-4556-87c2-6a9e531cb0d4)
+
 Annual members much more actively ride bikes on workdays opposite to casual users. Even if the number of rides by casual users increases on weekends and decreases by annual users, the last one still uses bikes more often. 
 
 ![image](https://github.com/artempohribnyi/case_study_cyclistic/assets/113499718/1b0809b4-5ea6-47c5-8758-234011d4b996)
 
-The average length of a ride by the period of a casual member is 2.33 times longer than annual. 
-
-![image](https://github.com/artempohribnyi/case_study_cyclistic/assets/113499718/634a9bd3-c0ed-4556-87c2-6a9e531cb0d4)
 
 The same picture, if to break down by a day. The average ride of casual users is lower in the middle of the week and increases on weekends. The average;ength of annual users during working days stays stable and also increases a bit on weekends.  
 
