@@ -412,11 +412,11 @@ GROUP BY
 
 ## Share
 
-During ten months from January 2023 to October 2023 annual members were using Cyclistic's bikes more frequently.  
+During the ten months from January 2023 to October 2023, annual members were using Cyclistic bikes 1.69 times frequently. 
 
 ![image](https://github.com/artempohribnyi/case_study_cyclistic/assets/113499718/75b5c31b-a110-440a-9d78-6b97b8a95cf1)
 
-Casual members spend more time overall than annual members.
+Casual members spent more time overall than annual members.
 ![image](https://github.com/artempohribnyi/case_study_cyclistic/assets/113499718/2ccaf094-2852-4010-beb6-caacce708369)
 
 
@@ -429,11 +429,11 @@ Annual members much more actively ride bikes on workdays opposite to casual user
 ![image](https://github.com/artempohribnyi/case_study_cyclistic/assets/113499718/1b0809b4-5ea6-47c5-8758-234011d4b996)
 
 
-The same picture, if to break down by a day. The average ride of casual users is lower in the middle of the week and increases on weekends. The average;ength of annual users during working days stays stable and also increases a bit on weekends.  
+The average ride of casual users is lower in the middle of the week and increases on weekends. The average ride length of annual users during working days stays stable and just increases a bit on weekends.
 
 ![image](https://github.com/artempohribnyi/case_study_cyclistic/assets/113499718/14e38af2-62fa-4589-825b-d82427c1f5d5)
 
-Casual riders prefer electric bikes to classic and some like docked bikes. Annual members use classic and electric bikes equaly. Also non of them prefers docked bikes at all.
+Casual riders prefer electric bikes to classic. Annual members use classic and electric bikes equally.
 
 ![image](https://github.com/artempohribnyi/case_study_cyclistic/assets/113499718/2e0dd15f-e2d8-4b43-a838-44acaacfd00b)
 
