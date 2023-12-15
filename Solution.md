@@ -449,11 +449,13 @@ Based on the analysis of Cyclistic bike usage data, it can be concluded that ann
 
 * Develop targeted marketing campaigns to encourage casual members to use bikes during weekdays, especially on workdays. Highlight the convenience and efficiency of bike usage for commuting or short trips.
 Create promotions or discounts for casual riders during weekdays to incentivize increased usage.
-Bike Fleet Management:
+
+**Bike Fleet Management:**
 
 * Consider adjusting the bike fleet based on user preferences. If electric bikes are popular among casual users, ensure an ample supply of electric bikes, especially during weekends.
 Explore opportunities to introduce new features or benefits for annual members to encourage even more consistent usage, potentially expanding the fleet of classic bikes.
-Membership Plans Optimization:
+
+**Membership Plans Optimization:**
 
 * Evaluate the possibility of introducing different membership plans tailored to the usage patterns observed. For instance, a weekday-focused plan for casual riders or an extended-hour plan for annual members during weekends.
 
